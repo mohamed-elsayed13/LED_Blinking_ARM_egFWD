@@ -1,0 +1,87 @@
+#ifndef NVIC_PROGRAM_H_
+#define NVIC_PROGRAM_H_
+
+/*****************************************************************************
+*
+* INCLUDES
+*
+*****************************************************************************/
+#include "Mcu_Hw.h"
+#include "Platform_Types.h"
+
+
+typedef enum
+{
+	NVIC_Priority_0,
+	NVIC_Priority_1,
+	NVIC_Priority_2,
+	NVIC_Priority_3,
+	NVIC_Priority_4,
+	NVIC_Priority_5,
+	NVIC_Priority_6,
+	NVIC_Priority_7,
+}NVIC_Priority;
+
+typedef enum
+{
+	NVIC_SYSTICK=15,
+	NVIC_GPIOA,
+	NVIC_GPIOB,
+	NVIC_GPIOC,
+	NVIC_GPIOD,
+	NVIC_GPIOE,
+	NVIC_UART0,
+	NVIC_UART1,
+	NVIC_SSI0,
+	NVIC_I2C0,
+	NVIC_PWM0_FAULT,
+	NVIC_PWM0_Generator0,
+	NVIC_PWM0_Generator1,
+	NVIC_PWM0_Generator2,
+	NVIC_QEI0,
+	NVIC_ADC0_Sequence0,
+	NVIC_ADC0_Sequence1,
+	NVIC_ADC0_Sequence2,
+	NVIC_ADC0_Sequence3,
+	NVIC_WATCHDOG_TIMERS0_1,
+	NVIC_TIMER0A_16_32,
+	NVIC_TIMER0B_16_32,
+	NVIC_TIMER1A_16_32,
+	NVIC_TIMER1B_16_32,
+	NVIC_TIMER2A_16_32,
+	NVIC_TIMER2B_16_32,
+	NVIC_ANALOG_COMPARATOR0,
+	NVIC_ANALOG_COMPARATOR1,
+	NVIC_SYSTEM_CONTROL=28,
+	NVIC_FLASH_MEMORY_EEPROM_CONTROL,
+	NVIC_GPIOF=45,
+	NVIC_UART2=33,
+	NVIC_SSI1,
+	NVIC_TIMER3A_16_32,
+	NVIC_TIMER3B_16_32,
+	NVIC_I2CI,
+	NVIC_QEI1,
+	NVIC_CAN0,
+	NVIC_CAN1,
+	NVIC_HIBERNATION_MODULE=43,
+	NVIC_USB,
+	NVIC_PWM_GENERATOR3,
+	NVIC_DMA_SOFTWARE,
+	NVIC_DMA_ERROR,
+	NVIC_ADC1_Sequence,
+	NVIC_ADC1_Sequence1,
+	NVIC_ADC1_Sequence2,
+	NVIC_ADC1_Sequence3,
+}NVIC_InterruptType;
+
+
+#define SYSTICK_PRIORITY_MASK  0x1FFFFFFF
+#define SYSTICK_INTERRUPT_PRIORITY  NVIC_Priority_3
+#define SYSTICK_PRIORITY_BITS_POS   29
+
+
+#define GPIO_PORTF_PRIORITY_MASK      0xFF1FFFFF
+#define GPIO_PORTF_PRIORITY_BITS_POS  21
+#define GPIO_PORTF_INTERRUPT_PRIORITY NVIC_Priority_2
+
+#endif /* GPIO_PROGRAM_H_ */
